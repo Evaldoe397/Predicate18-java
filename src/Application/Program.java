@@ -2,10 +2,8 @@ package Application;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
-
 import Entities.Product;
-import Util.ProductPredicate;
+
 
 public class Program {
 	
@@ -18,9 +16,10 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		//Utilizando uma classe interface com o Predicate
-		//e instanciando na aplicação dentro do removeIf().
-		list.removeIf(new ProductPredicate());
+		//Substituindo o uso da classe/interfaceFuncional Predicate
+		//pelo uso do método estático na classe Product.
+		list.removeIf(Product::staticProductPredicate);
+		
 		
 		for (Product p : list) {
 			System.out.println(p);
