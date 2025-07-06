@@ -2,6 +2,8 @@ package Application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+
 import Entities.Product;
 
 
@@ -16,9 +18,11 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		//Substituindo o uso da classe/interfaceFuncional Predicate só
-		//que agora pelo uso de um métodoão estático na classe Product.
-		list.removeIf(Product::nonStaticProductPredicate);
+		//Utilizando uma expressão lambda declarada.
+		
+		Predicate<Product> pred = p -> p.getPrice() >= 100;
+		
+		list.removeIf(pred);
 		
 		
 		for (Product p : list) {
