@@ -18,8 +18,8 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		//Utilizando uma classe como interface com a implementação
-		//"Predicate" e instanciando dentro do removeIf
+		//Utilizando uma classe interface com o Predicate
+		//e instanciando na aplicação dentro do removeIf().
 		list.removeIf(new ProductPredicate());
 		
 		for (Product p : list) {
