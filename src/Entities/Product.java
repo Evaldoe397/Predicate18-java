@@ -1,4 +1,6 @@
-package Entities;
+package entities;
+
+import java.text.DecimalFormat;
 
 public class Product{
 	private String name;
@@ -35,7 +37,8 @@ public class Product{
 
 	@Override
 	public String toString() {
-		return name + " " + price  ;
+		DecimalFormat df = new DecimalFormat("#.##");
+		return "Product [name=" + name + ", price=" + df.format(price) + "]";
 	}
 
 		
